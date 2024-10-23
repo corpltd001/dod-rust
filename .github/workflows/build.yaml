@@ -4,10 +4,8 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-on:
-  push:
-    tags:
-      - v[0-9]+.*
+on: push
+
 
 env:
   GITHUB_PAT: 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
