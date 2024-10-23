@@ -45,6 +45,5 @@ jobs:
           target: ${{ matrix.platform.target }}
           toolchain: ${{ matrix.toolchain }}
           args: '--release --package=dod_miner'
-          strip: true
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
