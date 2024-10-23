@@ -8,7 +8,6 @@ on: push
 
 
 env:
-  GITHUB_PAT: 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
   RUST_BACKTRACE: 1
 
 permissions:
@@ -47,25 +46,5 @@ jobs:
           toolchain: ${{ matrix.toolchain }}
           args: '--release --package=dod_miner'
           strip: true
-      - name: Package as archive
-        if: startsWith( github.ref, 'refs/tags/v' )
-        shell: bash
-        run: |
-          cd target/${{ matrix.platform.target }}/release
-          7z a ../../../${{ matrix.platform.name }} ${{ matrix.platform.bin }}
-          cd -
-      - name: Publish release artifacts
-        if: startsWith( github.ref, 'refs/tags/v' )
-        uses: actions/upload-artifact@v3
-        with:
-          name: dod_miner-${{ matrix.platform.os_name }}
-          path: 'dod_miner-*'
-      - name: Generate SHA-256
-        if: matrix.platform.os == 'windows-latest' && startsWith( github.ref, 'refs/tags/v' )
-        run: shasum -a 256 ${{ matrix.platform.name }}
-      - name: Publish GitHub release
-        if: startsWith( github.ref, 'refs/tags/v' )
-        uses: softprops/action-gh-release@v1
-        with:
-          files: 'dod_miner-*'
-          token: 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
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
