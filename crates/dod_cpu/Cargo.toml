@@ -1,0 +1,31 @@
+[package]
+edition = "2018"
+name = "dod_cpu"
+version = "0.0.1"
+
+[lib]
+path = "src/mod.rs"
+crate-type = ["lib"]
+
+[dependencies]
+candid = { workspace = true }
+serde_json = { workspace = true }
+serde = { workspace = true }
+hex = { workspace = true }
+bip32 = { workspace = true }
+bip39 = { workspace = true }
+k256 = { workspace = true }
+bitcoin = { workspace = true }
+anyhow = { workspace = true }
+serde_cbor = { workspace = true }
+rand = { workspace = true }
+indicatif = { workspace = true }
+flume = { workspace = true }
+linked-hash-map = { workspace = true }
+serde_bytes = { workspace = true }
+lazy_static = { workspace = true }
+ring = { workspace = true }
+tokio = { workspace = true }
+
+
+

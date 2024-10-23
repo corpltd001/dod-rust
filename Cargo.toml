@@ -1,0 +1,79 @@
+[workspace]
+members = [
+    "apps/dod_miner",
+    "apps/dod_runner_wasm",
+    "crates/dod_cpu",
+    "crates/dod_utils",
+]
+
+[profile.release]
+lto = true
+opt-level = 'z'
+
+[workspace.dependencies]
+serde_json = "1"
+serde = "1"
+hex = { version = "0.4.3", features = ["serde"] }
+sha2 = "0.10.6"
+bip32 = "0.4.0"
+bip39 = { version = "2.0.0", features = ["rand"] }
+k256 = { version = "0.13.2", default-features = false, features = [
+    "ecdsa",
+    "sha256",
+    "pem",
+] }
+bitcoin = { version = "0.32.2", default-features = false, features = ["serde", "base64", "rand", "std", ] }
+anyhow = "1.0.75"
+serde_cbor = "0.11.2"
+rand = "0.8.4"
+indicatif = "0.17.7"
+flume = "0.11.0"
+clap = { version = "4.4.6", features = ["derive"] }
+dotenv = "0.15.0"
+linked-hash-map = "0.5.4"
+serde_bytes = "0.11.12"
+rocket = { version = "0.5.0-rc.3", features = ["json"] }
+lazy_static = "1.4.0"
+once_cell = "1.18.0"
+async-trait = "0.1.57"
+candid = "0.10.10"
+ciborium = "0.2.1"
+bitcoin_hashes = "0.13.0"
+
+
+ic-cdk = { version = "0.16.0" }
+ic-cdk-timers = "0.10.0"
+ic-cdk-macros = "0.16.0"
+ic-ledger-types = "0.13.0"
+ic-stable-structures = "0.6.0"
+ic-certified-map = "0.4.0"
+icrc-ledger-types = "0.1.6"
+
+itertools = "0.13.0"
+simple_asn1 = "0.6.2"
+
+# wasi
+reqwest = { version = "0.11", features = ["json"] }
+tokio = { version = "1.35.0", features = ["full"] }
+http-body-util = "0.1.0-rc.2"
+cron-job = "0.1.4"
+warp = "0.3.1"
+tokio-cron-scheduler = "0.9.4"
+bytes = "1.5.0"
+heim-cpu = "0.0.11"
+memory-stats = "1.1.0"
+byteorder = "1.4.3"
+base64 = "0.21.2"
+rocket-slogger = "0.2.0"
+slog = "2.7"
+slog-term = { version = "2.9" }
+slog-bunyan = { version = "2.4" }
+slog-async = { version = "2.8.0" }
+slog-json = { version = "2.6.1" }
+sysinfo = { version = "0.30.1" }
+slog-envlogger = { version = "2.2.0" }
+chrono = "0.4.31"
+openssl = { version = "0.10", features = ["vendored"] }
+ring = "0.17.7"
+log4rs = "1.3.0"
+log = "0.4.14"

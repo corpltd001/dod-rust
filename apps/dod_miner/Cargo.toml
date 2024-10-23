@@ -1,0 +1,73 @@
+[package]
+edition = "2018"
+name = "dod_miner"
+version = "0.0.1"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[[bin]]
+name = "dod_miner"
+
+[dependencies]
+ic-agent = "0.38.1"
+sha2 = { workspace = true }
+candid = { workspace = true }
+serde_json = { workspace = true }
+serde = { workspace = true }
+hex = { workspace = true }
+bitcoin = { workspace = true }
+anyhow = { workspace = true }
+rand = { workspace = true }
+once_cell = { workspace = true }
+dotenv = { workspace = true }
+linked-hash-map = { workspace = true }
+flume = { workspace = true }
+serde_bytes = { workspace = true }
+k256 = { workspace = true }
+byteorder = { workspace = true }
+base64 = { workspace = true }
+bip322-simple = "0.3.1"
+log4rs = { workspace = true }
+
+
+
+#bitcoincore-rpc = { path = "./rust-bitcoincore-rpc/client" }
+#bitcoincore-rpc-json = { path = "./rust-bitcoincore-rpc/json" }
+rocket = { workspace = true }
+lazy_static = { workspace = true }
+tokio-cron-scheduler = { workspace = true }
+reqwest = { workspace = true }
+tokio = { workspace = true }
+bip32 = { workspace = true }
+bip39 = { workspace = true }
+warp = { workspace = true }
+bytes = { workspace = true }
+heim-cpu = { workspace = true }
+memory-stats = { workspace = true }
+rocket-slogger = { workspace = true }
+dod_cpu = { path = "../../crates/dod_cpu" }
+dod_utils = { path = "../../crates/dod_utils" }
+slog = { workspace = true }
+slog-term = { workspace = true }
+slog-bunyan = { workspace = true }
+slog-async = { workspace = true }
+slog-json = { workspace = true }
+slog-envlogger = { workspace = true }
+sysinfo = { workspace = true }
+chrono = { workspace = true }
+async-std = "1.12.0"
+clap = { version = "4.4.11", features = ["derive"] }
+openssl = { version = "0.10", features = ["vendored"] }
+gethostname = { version = "0.4.3" }
+uuid = { version = "1.6.1", features = ["v4"] }
+ring = "0.17.8"
+indicatif = "0.17.8"
+log = "0.4.22"
+
+[features]
+default = []
+debug = []
+
+
+

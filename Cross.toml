@@ -1,0 +1,27 @@
+[target.x86_64-pc-windows-gnu]
+image = "x86_64-pc-windows-gnu:local"
+#
+#[target.x86_64-apple-darwin]
+#image = "x86_64-apple-darwin:local"
+
+[target.x86_64-unknown-linux-gnu]
+image = "x86_64-unknown-linux-gnu:local"
+
+#[target.aarch64-pc-windows-msvc]
+#image = "aarch64-pc-windows-msvc:local"
+
+#[target.aarch64-apple-darwin]
+#image = "aarch64-apple-darwin:local"
+[target.aarch64_be-unknown-linux-gnu]
+image = "ghcr.io/cross-rs/aarch64_be-unknown-linux-gnu-cross:local"
+pre-build = ["dpkg --add-architecture arm64 && apt-get update && apt-get install --assume-yes libfoo:arm64"]
+
+
+[target.aarch64-unknown-linux-gnu]
+image = "ghcr.io/cross-rs/aarch64-unknown-linux-gnu:local"
+pre-build = ["dpkg --add-architecture arm64 && apt-get update && apt-get install --assume-yes libfoo:arm64"]
+
+
+[target.aarch64-unknown-linux-musl]
+image = "ghcr.io/cross-rs/aarch64-unknown-linux-musl:0.2.5"
+pre-build = ["dpkg --add-architecture arm64 && apt-get update && apt-get install libssl-dev -y"]
